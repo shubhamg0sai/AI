@@ -1,0 +1,24 @@
+GNU nano 6.0                               a      from word2number import w2n
+import os
+import time
+import subprocess
+
+def choice():
+        operator = subprocess.getoutput("termux-speech-to-text")
+        if "addition" in operator:
+
+
+
+def add():
+        n1 = subprocess.getoutput("termux-speech-to-text")
+        n2 = subprocess.getoutput("termux-speech-to-text")
+        a = w2n.word_to_num(n1)
+        b = w2n.word_to_num(n2)
+        print(a + b)
+
+def main():
+        c = subprocess.getoutput("termux-speech-to-text")
+        print(str(c))
+        if "calculator" in c:
+                add()
+main()
