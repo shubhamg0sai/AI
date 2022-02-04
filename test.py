@@ -58,6 +58,46 @@ def sendEmail(to, content):
     server.sendmail('youremail@gmail.com', to, content)
     server.close()
 
+
+
+def calculate():  # Define our function
+
+    speak("Please speak the math operation you would like to complete addition subtraction multiplication division")
+    operation = takeCommand()
+    speak("speak first number")
+    number_1 = takeCommand()
+    speak("speak second number")
+    number_2 = takeCommand()
+
+    if 'addition' in operation:
+        Result = number_1 + number_2
+        speak(Result)
+
+    elif 'subtraction' in operation:
+        Result = number_1 - number_2
+        speak(Result)
+
+    elif 'multiplication' in operation::
+        Resultt = number_1 * number_2
+        speak(Result)
+
+    elif 'division' in operation:
+        Result = number_1 / number_2
+        speak(Result)
+
+    else:
+        speak("You have not speak a valid operator please speak a valid operator")
+
+calculate()  # Call calculate() outside of the function
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
     wishMe()
     while True:
@@ -80,4 +120,4 @@ if __name__ == "__main__":
             webbrowser.open("google.com")
         
         elif 'open calculator' in query:
-            
+            calculate()
