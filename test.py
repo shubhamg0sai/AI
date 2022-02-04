@@ -2,10 +2,10 @@ import pyttsx3 #pip install pyttsx3
 import speech_recognition as sr #pip install speechRecognition
 import datetime
 import wikipedia #pip install wikipedia
-import webbrowser
+import webbrowser #pip install webbrowser
 import os
-import smtplib
-from word2number import w2n
+import smtplib #pip install smtplib
+from word2number import w2n #pip install word2number
 
 
 engine = pyttsx3.init('sapi5')
@@ -95,13 +95,6 @@ def calculate():  # Define our function
         speak("You have not speak a valid operator please speak a valid operator")
 
 calculate()  # Call calculate() outside of the function
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
