@@ -2,40 +2,52 @@ from word2number import w2n
 import os
 import time
 import subprocess
+nt1 = "speak You first number"
+nt2 = "speak You second number"
+op = "speak Your math operator like addition subtraction multiplication division"
+r = "the result is"
 
-def cal():
-        operator = subprocess.getoutput("termux-speech-to-text")
-        if "addition" in operator:
-                 n1 = subprocess.getoutput("termux-speech-to-text")
-                 n2 = subprocess.getoutput("termux-speech-to-text")
-                 a = w2n.word_to_num(n1)
-                 b = w2n.word_to_num(n2)
-                 print(a + b)
+def add():
+    subprocess.call(["termux-tts-speak",nt1])
+    n1 = subprocess.getoutput("termux-speech-to-text")
+    subprocess.call(["termux-tts-speak",nt2])
+    n2 = subprocess.getoutput("termux-speech-to-text")
+    result = w2n.word_to_num(n1) + w2n.word_to_num(n2)
+    subprocess.call(["termux-tts-speak",r,result])
 
-        elif "subtraction" in operator:
-                 n1 = subprocess.getoutput("termux-speech-to-text")
-                 n2 = subprocess.getoutput("termux-speech-to-text")
-                 a = w2n.word_to_num(n1)
-                 b = w2n.word_to_num(n2)
-                 print(a - b)
+def sub():
+    subprocess.call(["termux-tts-speak",nt1])
+    n1 = subprocess.getoutput("termux-speech-to-text")
+    subprocess.call(["termux-tts-speak",nt2])
+    n2 = subprocess.getoutput("termux-speech-to-text")
+    result = w2n.word_to_num(n1) - w2n.word_to_num(n2)
+    subprocess.call(["termux-tts-speak",r,result])
 
-        elif "multiplication" in operator:
-                 n1 = subprocess.getoutput("termux-speech-to-text")
-                 n2 = subprocess.getoutput("termux-speech-to-text")
-                 a = w2n.word_to_num(n1)
-                 b = w2n.word_to_num(n2)
-                 print(a * b)
+def mul():
+    subprocess.call(["termux-tts-speak",nt1])
+    n1 = subprocess.getoutput("termux-speech-to-text")
+    subprocess.call(["termux-tts-speak",nt2])
+    n2 = subprocess.getoutput("termux-speech-to-text")
+    result = w2n.word_to_num(n1) * w2n.word_to_num(n2)
+    subprocess.call(["termux-tts-speak",r,result])
 
-        elif "division" in operator:
-                 n1 = subprocess.getoutput("termux-speech-to-text")
-                 n2 = subprocess.getoutput("termux-speech-to-text")
-                 a = w2n.word_to_num(n1)
-                 b = w2n.word_to_num(n2)
-                 print(a / b)
+def div():
+    subprocess.call(["termux-tts-speak",nt1])
+    n1 = subprocess.getoutput("termux-speech-to-text")
+    subprocess.call(["termux-tts-speak",nt2])
+    n2 = subprocess.getoutput("termux-speech-to-text")
+    result = w2n.word_to_num(n1) / w2n.word_to_num(n2)
+    subprocess.call(["termux-tts-speak",r,result])
 
-def main():
-        c = subprocess.getoutput("termux-speech-to-text")
-        print(str(c))
-        if "calculator" in c:
-                Cal()
-main()
+def calculator():
+    subprocess.call(["termux-tts-speak",op])
+    inp = subprocess.getoutput("termux-speech-to-text")
+    if "addition" in inp:
+        add()
+    elif "substraction" in inp:
+        sub()
+    elif "multiplication" in inp:
+        mul()
+    elif "division" in inp:
+        div()
+calculator()
