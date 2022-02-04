@@ -12,13 +12,26 @@ def cal():
                  b = w2n.word_to_num(n2)
                  print(a + b)
 
+        elif "subtraction" in operator:
+                 n1 = subprocess.getoutput("termux-speech-to-text")
+                 n2 = subprocess.getoutput("termux-speech-to-text")
+                 a = w2n.word_to_num(n1)
+                 b = w2n.word_to_num(n2)
+                 print(a - b)
 
-def add():
-        n1 = subprocess.getoutput("termux-speech-to-text")
-        n2 = subprocess.getoutput("termux-speech-to-text")
-        a = w2n.word_to_num(n1)
-        b = w2n.word_to_num(n2)
-        print(a + b)
+        elif "multiplication" in operator:
+                 n1 = subprocess.getoutput("termux-speech-to-text")
+                 n2 = subprocess.getoutput("termux-speech-to-text")
+                 a = w2n.word_to_num(n1)
+                 b = w2n.word_to_num(n2)
+                 print(a * b)
+
+        elif "division" in operator:
+                 n1 = subprocess.getoutput("termux-speech-to-text")
+                 n2 = subprocess.getoutput("termux-speech-to-text")
+                 a = w2n.word_to_num(n1)
+                 b = w2n.word_to_num(n2)
+                 print(a / b)
 
 def main():
         c = subprocess.getoutput("termux-speech-to-text")
