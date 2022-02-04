@@ -1,6 +1,6 @@
 import pyttsx3 #pip install pyttsx3
 import speech_recognition as sr #pip install speechRecognition
-import datetime
+import datetime #pip install datetime
 import wikipedia #pip install wikipedia
 import webbrowser #pip install webbrowser
 import os
