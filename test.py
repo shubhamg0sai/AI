@@ -5,6 +5,8 @@ import wikipedia #pip install wikipedia
 import webbrowser
 import os
 import smtplib
+from word2number import w2n
+
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -63,11 +65,15 @@ def sendEmail(to, content):
 def calculate():  # Define our function
 
     speak("Please speak the math operation you would like to complete addition subtraction multiplication division")
-    operation = takeCommand()
+    operation = takeCommand().lower()
+
     speak("speak first number")
-    number_1 = takeCommand()
+    n1 = takeCommand().lower()
+    number_1 = w2n.word_to_num(n1)
+
     speak("speak second number")
-    number_2 = takeCommand()
+    n2 = takeCommand().lower() 
+    number_2 = w2n.word_to_num(n2)
 
     if 'addition' in operation:
         Result = number_1 + number_2
